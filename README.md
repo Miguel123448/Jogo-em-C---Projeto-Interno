@@ -35,8 +35,8 @@ A coluna **Backlog** contém as 11 histórias priorizadas (da mais prioritária 
 
 ### Backlog priorizado
 
-![Backlog priorizado - parte 1](./assets/backlog-1.png)
-![Backlog priorizado - parte 2](./assets/backlog-2.png)
+![Backlog priorizado - parte 1](./assets/backlog-01.png)
+![Backlog priorizado - parte 2](./assets/backlog-02.png)
 
 A ordem atual é:
 
