@@ -1,6 +1,6 @@
 # Histórias de Usuário (Padrão 3Cs)
 
-Abaixo estão os cards do Trello com as 10 histórias de usuário do projeto, cada uma contendo:
+Abaixo estão os cards do Trello com as 11 histórias de usuário do projeto, cada uma contendo:
 - Título e etiqueta de prioridade
 - Card (formato "Como... eu quero... para...")
 - Conversation (critérios de aceite)
@@ -26,15 +26,15 @@ Abaixo estão os cards do Trello com as 10 histórias de usuário do projeto, ca
 
 ---
 
-## UH4 – Visualizar estatísticas agregadas do histórico
+## UH4 – Tratar entradas inválidas sem travar
 
-![UH4 - Estatísticas agregadas](../assets/uh4.png)
+![UH4 - Tratar entradas inválidas](../assets/uh4.png)
 
 ---
 
-## UH5 – Receber sugestões estratégicas personalizadas
+## UH5 – Visualizar estatísticas agregadas do histórico
 
-![UH5 - Sugestões estratégicas](../assets/uh5.png)
+![UH5 - Estatísticas agregadas](../assets/uh5.png)
 
 ---
 
@@ -44,24 +44,30 @@ Abaixo estão os cards do Trello com as 10 histórias de usuário do projeto, ca
 
 ---
 
-## UH7 – Tratar entradas inválidas sem travar
+## UH7 – Adicionar música de fundo
 
-![UH7 - Tratar entradas inválidas](../assets/uh7.png)
-
----
-
-## UH8 – Calcular desvio padrão usando recursão
-
-![UH8 - Desvio padrão recursivo](../assets/uh8.png)
+![UH7 - Música de fundo](../assets/uh7.png)
 
 ---
 
-## UH9 – Identificar monotonicidade dos palpites (recursivo)
+## UH8 – Receber sugestões estratégicas personalizadas
 
-![UH9 - Monotonicidade recursiva](../assets/uh9.png)
+![UH8 - Sugestões estratégicas](../assets/uh8.png)
 
 ---
 
-## UH10 – Comparar desempenho com busca binária
+## UH9 – Calcular desvio padrão usando recursão
 
-![UH10 - Comparar com busca binária](../assets/uh10.png)
+![UH9 - Desvio padrão recursivo](../assets/uh9.png)
+
+---
+
+## UH10 – Identificar monotonicidade dos palpites (recursivo)
+
+![UH10 - Monotonicidade recursiva](../assets/uh10.png)
+
+---
+
+## UH11 – Comparar desempenho com busca binária
+
+![UH11 - Comparar com busca binária](../assets/uh11.png)

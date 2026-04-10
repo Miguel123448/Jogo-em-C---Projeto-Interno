@@ -36,16 +36,17 @@ A coluna **Backlog** contém as 10 histórias priorizadas (da mais prioritária 
 
 A ordem atual é:
 
-1. **UH1** – Iniciar nova partida (Prioridade Alta)  
-2. **UH2** – Receber dicas “muito alto / muito baixo” (Prioridade Alta)  
-3. **UH3** – Registrar sessão no histórico (Prioridade Alta)  
-4. **UH7** – Tratar entradas inválidas sem travar (Prioridade Alta)  
-5. **UH4** – Visualizar estatísticas agregadas (Prioridade Média)  
-6. **UH5** – Sugestões estratégicas personalizadas (Prioridade Média)  
-7. **UH6** – Recuperar histórico ao iniciar (Prioridade Média)  
-8. **UH8** – Calcular desvio padrão com recursão (Prioridade Baixa)  
-9. **UH9** – Identificar monotonicidade recursiva (Prioridade Baixa)  
-10. **UH10** – Comparar desempenho com busca binária (Prioridade Baixa)
+1. **UH1** – Iniciar nova partida (Prioridade Alta)
+2. **UH2** – Receber dicas “muito alto / muito baixo” (Prioridade Alta)
+3. **UH3** – Registrar sessão no histórico (Prioridade Alta)
+4. **UH4** – Tratar entradas inválidas sem travar (Prioridade Alta)
+5. **UH5** – Visualizar estatísticas agregadas (Prioridade Média)
+6. **UH6** – Recuperar histórico ao iniciar (Prioridade Média)
+7. **UH7** – Adicionar música de fundo (Prioridade Média)
+8. **UH8** – Sugestões estratégicas personalizadas (Prioridade Média)
+9. **UH9** – Calcular desvio padrão usando recursão (Prioridade Baixa)
+10. **UH10** – Identificar monotonicidade dos palpites (recursivo) (Prioridade Baixa)
+11. **UH11** – Comparar desempenho com busca binária (Prioridade Baixa)
 
 Cada história segue o **padrão 3Cs** (Card, Conversation, Confirmation) e possui checklist de tarefas.
 
