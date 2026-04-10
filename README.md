@@ -29,7 +29,7 @@ Você é um analista de segurança da CyberCore. Um ataque hacker está injetand
 
 ### Quadro Kanban
 
-![Kanban completo](./assets/kanban.png)
+![Kanban completo](./assets/quadro-kanban.png)
 
 A coluna **Backlog** contém as 11 histórias priorizadas (da mais prioritária no topo para a menos prioritária na base). As demais colunas (A Fazer, Em andamento, Revisão, Concluído) serão preenchidas durante o desenvolvimento.
 
