@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <string.h>
 //#include <raylib.h>
 
 typedef struct formatoHistorico{
@@ -17,42 +18,79 @@ int gerarNumeroAleatorio() {
     return (rand() % 100) + 1;
 }
 
-#include <string.h>  // strtok
-#include <stdlib.h>  // malloc, atoi
-
 int lerArquivo(FormatoHistorico *structHistorico){
 
-    int qtdLinhas;
     FILE *arquivo = fopen("historico.txt","r");
 
     if(arquivo == NULL){
         return -1;
     }
 
-    // lê a quantidade de registros
-    fscanf(arquivo, "%d\n", &qtdLinhas);
+    char linha[256];
+    int i = 0;
 
-    for(int i = 0; i < qtdLinhas; i++){
+    while(fgets(linha, sizeof(linha), arquivo) != NULL){
 
-        char palpitesStr[100];
+        char palpitesStr[200];
 
-        // lê cada linha formatada
-        fscanf(arquivo, "%[^;];%d;%d;%d;%d;%[^\n]\n",
+        // faz o parse da linha
+        if(sscanf(linha, "%[^;];%d;%d;%d;%d;%[^\n]",
                structHistorico[i].timestamp,
                &structHistorico[i].alvo,
                &structHistorico[i].tentativas,
                &structHistorico[i].baixo,
                &structHistorico[i].altos,
-               palpitesStr);
+               palpitesStr) != 6){
+            continue; // pula linha inválida
+        }
 
         // aloca memória para os palpites
-        structHistorico[i].palpites = malloc(structHistorico[i].tentativas * sizeof(int));
+        structHistorico[i].palpites =
+            malloc(structHistorico[i].tentativas * sizeof(int));
 
-      //TA FALTANDO PEGAR O PALPITES_CSV.
+        // separa CSV dos palpites
+        char *token = strtok(palpitesStr, ",");
+        int j = 0;
+
+        while(token != NULL && j < structHistorico[i].tentativas){
+            structHistorico[i].palpites[j]= atoi(token);
+            token = strtok(NULL, ","); 
+            j++;
+        }
+
+        i++;
     }
 
     fclose(arquivo);
-    return qtdLinhas;
+    return i; // quantidade de linhas lidas
+}
+
+void salvarPartida(FormatoHistorico partida){
+
+    FILE *arquivo = fopen("historico.txt", "a");
+
+    if(arquivo == NULL){
+        printf("Erro ao abrir arquivo!\n");
+        return;
+    }
+
+    fprintf(arquivo, "%s;%d;%d;%d;%d;",
+            partida.timestamp,
+            partida.alvo,
+            partida.tentativas,
+            partida.baixo,
+            partida.altos);
+
+    for(int i = 0; i < partida.tentativas; i++){
+        fprintf(arquivo, "%d", partida.palpites[i]);
+        if(i < partida.tentativas - 1){
+            fprintf(arquivo, ",");
+        }
+    }
+
+    fprintf(arquivo, "\n");
+
+    fclose(arquivo);
 }
 
 int main(){
