@@ -68,16 +68,16 @@ Vídeo demonstrativo da navegação e funcionalidades planejadas.
 ### Diagramas de Atividades do Sistema
 Modelagem do fluxo lógico para cada uma das histórias de usuário.
 
-- [ ] **UH1:** [Visualizar Diagrama](./assets/diagramas/atividade-uh1.png)
-- [ ] **UH2:** [Visualizar Diagrama](./assets/diagramas/atividade-uh2.png)
-- [ ] **UH3:** [Visualizar Diagrama](./assets/diagramas/atividade-uh3.png)
-- [ ] **UH4:** [Visualizar Diagrama](./assets/diagramas/atividade-uh4.png)
-- [ ] **UH5:** [Visualizar Diagrama](./assets/diagramas/atividade-uh5.png)
-- [ ] **UH6:** [Visualizar Diagrama](./assets/diagramas/atividade-uh6.png)
-- [ ] **UH7:** [Visualizar Diagrama](./assets/diagramas/atividade-uh7.png)
-- [ ] **UH8:** [Visualizar Diagrama](./assets/diagramas/atividade-uh8.png)
-- [ ] **UH9:** [Visualizar Diagrama](./assets/diagramas/atividade-uh9.png)
-- [ ] **UH10:** [Visualizar Diagrama](./assets/diagramas/atividade-uh10.png)
+- [ ] **UH1:** [Visualizar Diagrama](./assets/diagramas/atividade-uh1.jpg)
+- [ ] **UH2:** [Visualizar Diagrama](./assets/diagramas/atividade-uh2.jpg)
+- [ ] **UH3:** [Visualizar Diagrama](./assets/diagramas/atividade-uh3.jpg)
+- [ ] **UH4:** [Visualizar Diagrama](./assets/diagramas/atividade-uh4.jpg)
+- [ ] **UH5:** [Visualizar Diagrama](./assets/diagramas/atividade-uh5.jpg)
+- [ ] **UH6:** [Visualizar Diagrama](./assets/diagramas/atividade-uh6.jpg)
+- [ ] **UH7:** [Visualizar Diagrama](./assets/diagramas/atividade-uh7.jpg)
+- [ ] **UH8:** [Visualizar Diagrama](./assets/diagramas/atividade-uh8.jpg)
+- [ ] **UH9:** [Visualizar Diagrama](./assets/diagramas/atividade-uh9.jpg)
+- [ ] **UH10:** [Visualizar Diagrama](./assets/diagramas/atividade-uh10.jpg)
 
 ---
 
