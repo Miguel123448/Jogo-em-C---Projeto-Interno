@@ -41,7 +41,7 @@ As 10 histórias completas estão disponíveis no [quadro do Trello](https://tre
 
 ### Protótipos de Baixa Fidelidade (Lo-Fi)
 Os protótipos iniciais foram desenvolvidos no Figma para validar o fluxo de navegação e a hierarquia de informações.
-- 🔗 [Acesse o protótipo no Figma aqui](https://www.figma.com/design/rhhIDpgt5qU3j4WoQvU7wj/Sem-t%C3%ADtulo?node-id=0-1&p=f)
+- 🔗 [Acesse o protótipo no Figma aqui](https://www.figma.com/make/hvzhHgR8lGsDkOvLYZvtSs/CyberCore-Game-Prototype?t=PWjPK4Py01ldBkYl-20&fullscreen=1)
 
 ### Sketches e Storyboards
 Abaixo estão os esboços manuais e a sequência narrativa das principais interações (mínimo de 10 unidades).
@@ -58,6 +58,8 @@ Abaixo estão os esboços manuais e a sequência narrativa das principais intera
 | **UH8** | ![UH8 Sketch](./assets/sketches/uh8.png) |
 | **UH9** | ![UH9 Sketch](./assets/sketches/uh9.png) |
 | **UH10** | ![UH10 Sketch](./assets/sketches/uh10.png) |
+
+- 🔗 [Acesse os sketches e storyboards no Figma aqui](https://www.figma.com/design/rhhIDpgt5qU3j4WoQvU7wj/Sem-t%C3%ADtulo?node-id=0-1&t=rytzOBqNChNGkl37-1)
 
 > *Nota: Todos os arquivos também estão anexados aos seus respectivos cards no Trello.*
 
@@ -78,6 +80,8 @@ Modelagem do fluxo lógico para cada uma das histórias de usuário.
 - [ ] **UH8:** [Visualizar Diagrama](./assets/diagramas/atividade-uh8.jpg)
 - [ ] **UH9:** [Visualizar Diagrama](./assets/diagramas/atividade-uh9.jpg)
 - [ ] **UH10:** [Visualizar Diagrama](./assets/diagramas/atividade-uh10.jpg)
+
+> *Nota: Todos os arquivos também estão anexados aos seus respectivos cards no Trello.*
 
 ---
 
