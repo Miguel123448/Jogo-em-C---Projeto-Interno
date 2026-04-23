@@ -63,7 +63,7 @@ Abaixo estão os esboços manuais e a sequência narrativa das principais intera
 
 ### Screencast do Protótipo
 Vídeo demonstrativo da navegação e funcionalidades planejadas.
-- 📺 [Assista ao Screencast](LINK_DO_VIDEO_AQUI)
+- 📺 [Assista ao Screencast](https://drive.google.com/file/d/1ptDQPoB4hk8FwIXI8O0mnft34nn2L9Tx/view?usp=sharing)
 
 ### Diagramas de Atividades do Sistema
 Modelagem do fluxo lógico para cada uma das histórias de usuário.
