@@ -73,7 +73,7 @@ Modelagem do fluxo lógico para cada uma das histórias de usuário.
 - [ ] **UH1:** [Visualizar Diagrama](./assets/diagramas/atividade-uh1.jpg)
 - [ ] **UH2:** [Visualizar Diagrama](./assets/diagramas/atividade-uh2.jpg)
 - [ ] **UH3:** [Visualizar Diagrama](./assets/diagramas/atividade-uh3.jpg)
-- [ ] **UH4:** [Visualizar Diagrama](./assets/diagramas/atividade-uh4.jpg)
+- [ ] **UH4:** [Visualizar Diagrama](./assets/diagramas/atividade-uh4.png)
 - [ ] **UH5:** [Visualizar Diagrama](./assets/diagramas/atividade-uh5.jpg)
 - [ ] **UH6:** [Visualizar Diagrama](./assets/diagramas/atividade-uh6.jpg)
 - [ ] **UH7:** [Visualizar Diagrama](./assets/diagramas/atividade-uh7.png)
