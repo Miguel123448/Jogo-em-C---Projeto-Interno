@@ -26,12 +26,18 @@ int lerArquivo(FormatoHistorico *structHistorico);
 void salvarPartida(FormatoHistorico partida);
 
 int main() {
+    srand(time(NULL));  //Necessario para a funcao gerarNumeroAleatorio
     InitWindow(1280, 720, "Menu Raylib");
     SetTargetFPS(60);
 
     GameState estado = MENU;
-    int opcaoSelecionada = 0;
+    int menuOpcaoSelecionada = 0;
     int totalOpcoes = 3;
+
+    char inputTexto[50] = "";
+    int inputTamanho = 0;
+    bool inputAtivo = false;
+    Rectangle inputBox = {100, 200, 300, 40};
 
     const char *opcoes[3] = {"Iniciar Jogo","Estatísticas","Sair"};
 
@@ -39,16 +45,16 @@ int main() {
 
         // ===== INPUT =====
         if (estado == MENU) {
-            if (IsKeyPressed(KEY_DOWN)) opcaoSelecionada++;
-            if (IsKeyPressed(KEY_UP)) opcaoSelecionada--;
+            if (IsKeyPressed(KEY_DOWN)) menuOpcaoSelecionada++;
+            if (IsKeyPressed(KEY_UP)) menuOpcaoSelecionada--;
 
-            if (opcaoSelecionada < 0) opcaoSelecionada = totalOpcoes - 1;
-            if (opcaoSelecionada >= totalOpcoes) opcaoSelecionada = 0;
+            if (menuOpcaoSelecionada < 0) menuOpcaoSelecionada = totalOpcoes - 1;
+            if (menuOpcaoSelecionada >= totalOpcoes) menuOpcaoSelecionada = 0;
 
             if (IsKeyPressed(KEY_ENTER)) {
-                if (opcaoSelecionada == 0) estado = JOGO;
-                if (opcaoSelecionada == 1) estado = ESTATISTICAS;
-                if (opcaoSelecionada == 2) estado = SAIR;
+                if (menuOpcaoSelecionada == 0) estado = JOGO;
+                if (menuOpcaoSelecionada == 1) estado = ESTATISTICAS;
+                if (menuOpcaoSelecionada == 2) estado = SAIR;
             }
         }
 
@@ -64,14 +70,62 @@ int main() {
             DrawText("Cybercore", 300, 100, 40, GREEN);
 
             for (int i = 0; i < 3; i++) {
-                Color cor = (i == opcaoSelecionada) ? RED : DARKGRAY;
+                Color cor = (i == menuOpcaoSelecionada) ? RED : DARKGRAY;
                 DrawText(opcoes[i], 320, 250 + i * 40, 20, cor);
             }
 
         } else if (estado == JOGO) {
-            DrawText("Voltar ao Menu", 100, 100, 30, DARKGRAY);
-
+            Rectangle botao = {100, 100, 250, 40};
+            bool hover = CheckCollisionPointRec(GetMousePosition(), botao);
+            Color cor = hover ? RED : DARKGRAY;
+            DrawText("Voltar ao Menu", botao.x, botao.y, 30, cor);
+            if (hover && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                estado = MENU;  
         }
+        // Clique ativa/desativa
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                if (CheckCollisionPointRec(GetMousePosition(), inputBox)) {
+                    inputAtivo = true;
+                } else {
+                    inputAtivo = false;
+                }
+            }
+
+            // Captura teclado
+            if (inputAtivo) {
+                int tecla = GetCharPressed();
+
+                while (tecla > 0) {
+                    if (inputTamanho < 49) {
+                        inputTexto[inputTamanho] = (char)tecla;
+                        inputTamanho++;
+                        inputTexto[inputTamanho] = '\0';
+                    }
+                    tecla = GetCharPressed();
+                }
+
+                // Backspace
+                if (IsKeyPressed(KEY_BACKSPACE)) {
+                    if (inputTamanho > 0) {
+                        inputTamanho--;
+                        inputTexto[inputTamanho] = '\0';
+                    }
+                }
+            }
+            // Caixa
+                DrawRectangleRec(inputBox, LIGHTGRAY);
+                DrawRectangleLinesEx(inputBox, 2, inputAtivo ? BLUE : DARKGRAY);
+
+                // Texto digitado
+                DrawText(inputTexto, inputBox.x + 10, inputBox.y + 10, 20, BLACK);
+
+                // Placeholder
+                if (inputTamanho == 0 && !inputAtivo) {
+                    DrawText("Digite um número...", inputBox.x + 10, inputBox.y + 10, 20, GRAY);
+                }
+                
+        
+    }
 
         EndDrawing();
     }
