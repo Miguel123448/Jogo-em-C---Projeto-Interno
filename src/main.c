@@ -123,8 +123,11 @@ int main() {
                 if (inputTamanho == 0 && !inputAtivo) {
                     DrawText("Digite um número...", inputBox.x + 10, inputBox.y + 10, 20, GRAY);
                 }
-                
-        
+
+                if (inputAtivo && ((int)(GetTime() * 2) % 2 == 0)) {
+                    int larguraTexto = MeasureText(inputTexto, 20);
+                    DrawText("|",inputBox.x + 10 + larguraTexto, inputBox.y + 10,20,BLACK);
+                }
     }
 
         EndDrawing();
