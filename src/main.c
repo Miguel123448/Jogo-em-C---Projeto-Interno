@@ -59,6 +59,8 @@ int main() {
                 if (menuOpcaoSelecionada == 0){ 
                     estado = JOGO;
                     numeroAlvo = gerarNumeroAleatorio();
+                    inputTexto[0] = '\0';
+                    inputTamanho = 0;
                 }
                 if (menuOpcaoSelecionada == 1) estado = ESTATISTICAS;
                 if (menuOpcaoSelecionada == 2) estado = SAIR;
