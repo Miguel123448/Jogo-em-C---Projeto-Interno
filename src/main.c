@@ -16,16 +16,18 @@ typedef struct formatoHistorico{
     char timestamp[20]; //dependendo de como vamos fazer o tempo isso aqui pode mudar
     int alvo;
     int tentativas;
-    int baixo;
+    int baixos;
     int altos;
     int *palpites;
+    int capacidade; //capacidade que o ponteiro palpites tem pra armazenar.
 } FormatoHistorico;
 
-int gerarNumeroAleatorio();
 int lerArquivo(FormatoHistorico *structHistorico);
 void salvarPartida(FormatoHistorico partida);
+FormatoHistorico iniciarPartida();
 
 int main() {
+    int DEBUG = 1;  //mostra o numero alvo, feito pra testes
     srand(time(NULL));  //Necessario para a funcao gerarNumeroAleatorio
     InitWindow(1280, 720, "Menu Raylib");
     SetTargetFPS(60);
@@ -41,9 +43,10 @@ int main() {
     bool inputAtivo = false;
     Rectangle inputBox = {100, 200, 300, 40};
     
-    int numeroAlvo; //variavel gerada que ser ao alvo
     char mensagem[50] = "Digite um número";
     Color corMsg;
+
+    FormatoHistorico partida;
 
     while (!WindowShouldClose()) {
 
@@ -58,9 +61,10 @@ int main() {
             if (IsKeyPressed(KEY_ENTER)) {
                 if (menuOpcaoSelecionada == 0){ 
                     estado = JOGO;
-                    numeroAlvo = gerarNumeroAleatorio();
                     inputTexto[0] = '\0';
                     inputTamanho = 0;
+                    partida = iniciarPartida();
+                    if(DEBUG ==1) printf("%d\n", partida.alvo);
                 }
                 if (menuOpcaoSelecionada == 1) estado = ESTATISTICAS;
                 if (menuOpcaoSelecionada == 2) estado = SAIR;
@@ -125,17 +129,31 @@ int main() {
                     // Enter para confirmar
                 if (IsKeyPressed(KEY_ENTER) && inputTamanho > 0) {
                     int valor = atoi(inputTexto);
-                    if (valor > numeroAlvo) {
+                    partida.palpites[partida.tentativas] = valor;
+                    partida.tentativas++;
+                    if (valor > partida.alvo) {
                         strcpy(mensagem, "Muito alto!");
                         corMsg = RED;
+                        partida.altos++;
                     }
-                    else if (valor < numeroAlvo) {
+                    else if (valor < partida.alvo) {
                         strcpy(mensagem, "Muito baixo!");
                         corMsg = BLUE;
+                        partida.baixos++;
                     }
                     else {
                         strcpy(mensagem, "Acertou!");
                         corMsg = GREEN;
+                        salvarPartida(partida);
+                        estado = MENU;  //se acertar volta para o menu, temporario
+                    }
+                    if (partida.tentativas == partida.capacidade) {
+                        partida.capacidade *= 2; // dobra
+                        partida.palpites = realloc(partida.palpites,partida.capacidade * sizeof(int));
+                        if(partida.palpites == NULL){
+                            printf("Erro de memoria, saindo do jogo...");
+                            exit(1);
+                        }
                     }
                     // limpa input
                     inputTamanho = 0;
@@ -174,9 +192,28 @@ int main() {
     return 0;
 }
 
-int gerarNumeroAleatorio() {
-    return (rand() % 100) + 1;
+FormatoHistorico iniciarPartida(){
+    FormatoHistorico partida;
+    //timestamp
+    time_t t = time(NULL);
+    struct tm *tm_info = localtime(&t);
+    strftime(partida.timestamp, 20, "%Y-%m-%d %H:%M", tm_info);
+    //dados do jogos
+    partida.alvo = (rand() % 100 + 1);
+    partida.tentativas = 0;
+    partida.altos = 0;
+    partida.baixos = 0;
+    //alocacao de memoria
+    partida.capacidade = 10;
+    partida.palpites = malloc(partida.capacidade * sizeof(int));
+
+    if (partida.palpites == NULL) {
+        printf("Erro ao alocar memória!\n");
+        exit(1);
+    }
+    return partida;
 }
+
 
 int lerArquivo(FormatoHistorico *structHistorico){
 
@@ -198,7 +235,7 @@ int lerArquivo(FormatoHistorico *structHistorico){
                structHistorico[i].timestamp,
                &structHistorico[i].alvo,
                &structHistorico[i].tentativas,
-               &structHistorico[i].baixo,
+               &structHistorico[i].baixos,
                &structHistorico[i].altos,
                palpitesStr) != 6){
             continue; // pula linha inválida
@@ -241,7 +278,7 @@ void salvarPartida(FormatoHistorico partida){
             partida.timestamp,
             partida.alvo,
             partida.tentativas,
-            partida.baixo,
+            partida.baixos,
             partida.altos);
 
     for(int i = 0; i < partida.tentativas; i++){
