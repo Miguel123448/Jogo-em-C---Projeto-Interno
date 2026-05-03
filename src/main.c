@@ -187,7 +187,7 @@ int lerArquivo(FormatoHistorico *structHistorico){
         char palpitesStr[200];
 
         // faz o parse da linha
-        if(sscanf(linha, "%[^;];%d;%d;%d;%d;%[^\n]",
+        if(sscanf(linha, "%19[^;];%d;%d;%d;%d;%[^\n]",
                structHistorico[i].timestamp,
                &structHistorico[i].alvo,
                &structHistorico[i].tentativas,
