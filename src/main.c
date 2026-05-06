@@ -204,7 +204,7 @@ int main() {
             else {
                 int y = 120;
 
-                for (int i = 0; i < totalHistorico && i < 20; i++) {
+                for (int i = 0; i < totalHistorico && i < 40; i++) {
 
                     char linha[300];
 
