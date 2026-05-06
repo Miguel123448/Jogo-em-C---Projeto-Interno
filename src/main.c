@@ -33,7 +33,7 @@ int main() {
 
     srand(time(NULL));
     InitWindow(1280, 720, "Jogo de Adivinhacao");
-    ToggleFullscreen();
+    //ToggleFullscreen();
     SetExitKey(0);
     SetTargetFPS(60);
 
@@ -204,7 +204,7 @@ int main() {
             else {
                 int y = 120;
 
-                for (int i = 0; i < totalHistorico && i < 10; i++) {
+                for (int i = 0; i < totalHistorico && i < 20; i++) {
 
                     char linha[300];
 
