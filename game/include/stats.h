@@ -19,6 +19,8 @@ typedef struct {
 
     float precisaoMedia;
 
+    int historicoErros[100];
+
 } GameStats;
 
 void AtualizarStats(

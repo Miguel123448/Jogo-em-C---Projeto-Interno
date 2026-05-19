@@ -1,12 +1,6 @@
-/* =========================================================
-   src/main.c
-   ========================================================= */
-
 #include "raylib.h"
-
 #include <stdlib.h>
 #include <time.h>
-
 #include "sudoku.h"
 #include "hacker.h"
 #include "stats.h"
@@ -397,94 +391,86 @@ int main() {
 
                 break;
 
-            case VITORIA:
-
+             case VITORIA:
+                
                 if (!statsSalvas) {
-
                     AtualizarStats(
                         &stats,
-                        16,
+                        1,
                         sudoku.erros,
                         true
                     );
-
                     statsSalvas = true;
                 }
 
                 DrawText(
-                    "ATAQUE INTERROMPIDO",
-                    240,
+                    "AMEACA NEUTRALIZADA",
+                    280,
                     220,
                     55,
                     GREEN
                 );
 
                 DrawText(
-                    "SISTEMA PROTEGIDO",
-                    330,
+                    "SISTEMA PROTEGIDO COM SUCESSO",
+                    210,
                     330,
                     40,
                     WHITE
                 );
 
                 DrawText(
-                    "PRESSIONE H PARA VER LOGS",
-                    260,
+                    "PRESSIONE H PARA VER LOGS DE DEFESA",
+                    210,
                     500,
                     30,
                     GOLD
                 );
 
                 if (IsKeyPressed(KEY_H)) {
-
                     estado = HISTORICO;
                 }
-
                 break;
-
+                
             case DERROTA:
-
+               
                 if (!statsSalvas) {
-
                     AtualizarStats(
                         &stats,
-                        0,
+                        0, 
                         sudoku.erros,
                         false
                     );
-
                     statsSalvas = true;
                 }
 
                 DrawText(
                     "SISTEMA COMPROMETIDO",
-                    220,
+                    240,
                     220,
                     55,
                     RED
                 );
 
                 DrawText(
-                    "O ATAQUE FOI CONCLUIDO",
-                    230,
+                    "FALHA CRITICA: DADOS VAZADOS",
+                    240,
                     330,
                     40,
                     WHITE
                 );
 
                 DrawText(
-                    "PRESSIONE H PARA VER LOGS",
-                    250,
+                    "PRESSIONE H PARA RELATORIO DE DANOS",
+                    190,
                     500,
                     30,
-                    GOLD
+                    GRAY
                 );
 
                 if (IsKeyPressed(KEY_H)) {
-
                     estado = HISTORICO;
                 }
-
                 break;
 
             case HISTORICO:
